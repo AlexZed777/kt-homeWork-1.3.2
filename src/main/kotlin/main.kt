@@ -1,6 +1,6 @@
 
 fun main() {
-    println(comission(7000.00, 76000.00, MASTERCARD))
+    println(comission(7000, 9000, MIR))
 }
 
 const val MASTERCARD = "Mastercard"
@@ -10,7 +10,7 @@ const val MIR = "Мир"
 const val VKPAY = "VK Pay"
 
 
-fun comission(amountMoneysTransferInMonth: Double, moneysTransfer: Double, type: String = VKPAY): Double {
+fun comission(amountMoneysTransferInMonth: Int, moneysTransfer: Int, type: String = VKPAY): Double {
     return when (type) {
         MASTERCARD, MAESTRO -> if (amountMoneysTransferInMonth < 75000.00 && moneysTransfer < 75000.00) 0.00
         else (moneysTransfer * 0.006) + 25.00
